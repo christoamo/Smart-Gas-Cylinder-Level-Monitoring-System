@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Gas Cylinder Level Monitoring System</title>
+  <title>Components - Smart Gas Cylinder Monitoring</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #1e1e1e;
-      color: #e0e0e0;
+      background-color: #1e1e1e;
+      color: #ddd;
     }
+
     header {
       background: #111;
       color: #fff;
@@ -122,85 +123,68 @@
       }
     }
 
-    .hero {
-      position: relative;
-      height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-      overflow: hidden;
-    }
-    .hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(40%) contrast(110%);
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-    .hero-text {
-      font-size: 40px;
-      font-weight: bold;
-      animation: fadeIn 2s ease-in-out;
-    }
-    .hero-subtext {
-      margin-top: 15px;
-      font-size: 18px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
-      animation: fadeIn 3s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
     .container {
-      padding: 40px;
+      padding: 40px 20px;
       text-align: center;
     }
-    .bottom-boxes {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin: 50px auto;
-      flex-wrap: wrap;
+
+    .container h2 {
+      font-size: 2.2em;
+      color: #fff;
+      margin-bottom: 30px;
     }
-    .box {
-      background: #2c2c2c;
-      padding: 25px;
-      border-radius: 15px;
-      width: 300px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      text-align: center;
-      cursor: pointer;
+
+    .components-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 20px;
     }
-    .box:hover {
+
+    .component-card {
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .component-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+      box-shadow: 0px 0px 15px #00c6ff;
     }
-    .box h2 {
-      color: #00c6ff;
+
+    .component-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 8px;
       margin-bottom: 15px;
     }
+
+    .component-card h3 {
+      color: #00c6ff;
+      margin-bottom: 10px;
+    }
+
+    .component-card p {
+      font-size: 0.95em;
+      line-height: 1.5em;
+      color: #ccc;
+    }
+
     footer {
       background: #111;
-      color: #aaa;
+      padding: 15px;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 14px;
+      color: #888;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
   <header>
-    Smart Gas Cylinder Monitoring
+    Core Components
   </header>
 
   <nav>
@@ -218,36 +202,38 @@
     </ul>
   </nav>
 
-  <div class="hero">
-    <img src="gasbg2.png" alt="Gas monitoring system">
-    <div>
-      <div class="hero-text">Welcome to GraviTech</div>
-      <div class="hero-subtext">
-        Stay in Control of Your Gas Supply. Real-time monitoring, estimated usage, and instant notifications at your fingertips.
+  <div class="container">
+    <h2>Components Used</h2>
+    <div class="components-grid">
+
+      <div class="component-card">
+        <img src="esp32_2.png" alt="ESP32">
+        <h3>ESP32</h3>
+        <p>The ESP32 microcontroller acts as the brain of the system, handling data from the load cell and sending real-time monitoring updates.</p>
+      </div>
+
+      <div class="component-card">
+        <img src="hx711_2.png" alt="HX711">
+        <h3>HX711 Module</h3>
+        <p>The HX711 is a precision 24-bit ADC used to interface the load cell with the ESP32 for accurate weight measurement.</p>
+      </div>
+
+      <div class="component-card">
+        <img src="loadcell_2.png" alt="Load Cell">
+        <h3>Load Cell</h3>
+        <p>The load cell measures the gas cylinder’s weight, enabling the system to calculate remaining gas levels precisely.</p>
+      </div>
+
+      <div class="component-card">
+        <img src="OLED_2.png" alt="Display">
+        <h3>OLED Display</h3>
+        <p>The OLED display shows the live gas level, estimated usage time, and flame mode of the stove</p>
       </div>
     </div>
   </div>
 
-  <div class="container">
-    <h2>Why This Project?</h2>
-    <p>
-      Efficient gas management is key for households and industries. With our system, you can monitor gas cylinder levels in real-time and receive usage estimates, ensuring you never run out unexpectedly and can plan refills smartly.
-    </p>
-  </div>
-
-  <div class="bottom-boxes">
-    <div class="box" onclick="window.location.href='team.html'">
-      <h2>About the Team</h2>
-      <p>Meet <b>GraviTech</b> – the minds behind this project.</p>
-    </div>
-    <div class="box" onclick="window.location.href='features.html'">
-      <h2>Know More About the Project</h2>
-      <p>Explore features like live monitoring, estimated usage time, and flame modes.</p>
-    </div>
-  </div>
-
   <footer>
-    &copy; 2025 GraviTech | Smart Gas Cylinder Level Monitoring System
+    <p>© 2025 GraviTech | Smart Gas Cylinder Level Monitoring System</p>
   </footer>
 
   <script>
