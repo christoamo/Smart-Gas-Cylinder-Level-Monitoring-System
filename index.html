@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Gas Cylinder Level Monitoring System</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #1e1e1e;
+      color: #e0e0e0;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    /* Navigation styles */
+    nav {
+      background: #2a2a2a;
+      padding: 12px 20px;
+      position: relative;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      color: #ddd;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      box-shadow: 0px 0px 12px #00c6ff;
+      background: #1e1e1e;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 22px;
+      cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      z-index: 1100; /* stays above menu */
+    }
+    .hamburger div {
+      width: 100%;
+      height: 3px;
+      background: #f1f1f1;
+      border-radius: 2px;
+      transition: 0.4s;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        background: #2a2a2a;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 200px;
+        display: none; /* hidden by default on mobile */
+        padding: 10px;
+        z-index: 1000; /* ensure it sits above other content */
+      }
+      nav ul.active {
+        display: flex !important; /* force show when toggled */
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .hero {
+      position: relative;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(40%) contrast(110%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .hero-text {
+      font-size: 40px;
+      font-weight: bold;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero-subtext {
+      margin-top: 15px;
+      font-size: 18px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      animation: fadeIn 3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .container {
+      padding: 40px;
+      text-align: center;
+    }
+    .bottom-boxes {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 50px auto;
+      flex-wrap: wrap;
+    }
+    .box {
+      background: #2c2c2c;
+      padding: 25px;
+      border-radius: 15px;
+      width: 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      cursor: pointer;
+    }
+    .box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    }
+    .box h2 {
+      color: #00c6ff;
+      margin-bottom: 15px;
+    }
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Smart Gas Cylinder Monitoring
+  </header>
+
+  <nav>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="components.html">Components</a></li>
+      <li><a href="features.html">Overview & Features</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="demo.html">Demo</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <img src="gasbg2.png" alt="Gas monitoring system">
+    <div>
+      <div class="hero-text">Welcome to GraviTech</div>
+      <div class="hero-subtext">
+        Stay in Control of Your Gas Supply. Real-time monitoring, estimated usage, and instant notifications at your fingertips.
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Why This Project?</h2>
+    <p>
+      Efficient gas management is key for households and industries. With our system, you can monitor gas cylinder levels in real-time and receive usage estimates, ensuring you never run out unexpectedly and can plan refills smartly.
+    </p>
+  </div>
+
+  <div class="bottom-boxes">
+    <div class="box" onclick="window.location.href='team.html'">
+      <h2>About the Team</h2>
+      <p>Meet <b>GraviTech</b> – the minds behind this project.</p>
+    </div>
+    <div class="box" onclick="window.location.href='features.html'">
+      <h2>Know More About the Project</h2>
+      <p>Explore features like live monitoring, estimated usage time, and flame modes.</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 GraviTech | Smart Gas Cylinder Level Monitoring System
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

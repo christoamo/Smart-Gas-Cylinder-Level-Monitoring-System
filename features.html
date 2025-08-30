@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features - Smart Gas Cylinder Monitoring</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e1e;
+      color: #ddd;
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    /* Navigation styles */
+    nav {
+      background: #2a2a2a;
+      padding: 12px 20px;
+      position: relative;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      color: #ddd;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      box-shadow: 0px 0px 12px #00c6ff;
+      background: #1e1e1e;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: #f1f1f1;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        background: #2a2a2a;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 200px;
+        display: none;
+        padding: 10px;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .container {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .container h2 {
+      font-size: 2.2em;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    /* Abstract text (centered, no box) */
+    .abstract-text {
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+      line-height: 1.6;
+      color: #ccc;
+      text-align: center;
+      font-size: 1.05em;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 20px;
+    }
+
+    .feature-card {
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0px 0px 15px #00c6ff;
+    }
+
+    .feature-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .feature-card h3 {
+      color: #00c6ff;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 0.95em;
+      line-height: 1.5em;
+      color: #ccc;
+    }
+
+    footer {
+      background: #111;
+      padding: 15px;
+      text-align: center;
+      color: #888;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Learn about the project
+  </header>
+
+  <nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="components.html">Components</a></li>
+      <li><a href="features.html">Overview & Features</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="demo.html">Demo</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <!-- Project Abstract -->
+    <h2>Project Abstract</h2>
+    <p class="abstract-text">
+      The Smart Gas Cylinder Monitoring System is designed to provide real-time tracking of gas levels in cylinders,
+      making it ideal for households, restaurants, and industrial settings. Using precision sensors connected to an
+      IoT-enabled platform, the system continuously measures the weight of the cylinder and calculates the remaining gas.
+      It offers accurate estimated usage times, helping users plan refills efficiently and avoid unexpected shortages.
+      The data is displayed live on a web interface, allowing users to monitor their gas levels from anywhere. This project
+      emphasizes convenience, operational efficiency, and streamlined resource management by leveraging modern IoT
+      technology and real-time data analysis.
+    </p>
+  </div>
+
+  <div class="container">
+    <h2>What Makes It Smart?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <img src="Gauge.png" alt="Gas Monitoring">
+        <h3>Real-time Gas Monitoring</h3>
+        <p>Constantly tracks the gas cylinder’s weight to ensure you always know how much gas remains.</p>
+      </div>
+      <div class="feature-card">
+        <img src="time.png" alt="Usage Time">
+        <h3>Estimated Usage Time</h3>
+        <p>Predicts how long the gas will last based on average consumption rates.</p>
+      </div>
+      <div class="feature-card">
+        <img src="Alert.png" alt="Safety Alerts">
+        <h3>Safety Alerts</h3>
+        <p>Alerts you when the cylinder is almost empty or when unusual activity is detected.</p>
+      </div>
+      <div class="feature-card">
+        <img src="IoT.jpg" alt="Mobile Connectivity">
+        <h3>Mobile Connectivity</h3>
+        <p>Stay updated from anywhere via IoT integration and notifications.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 GraviTech | Smart Gas Cylinder Level Monitoring System</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

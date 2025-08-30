@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Team - Smart Gas Monitoring System</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e1e;
+      color: #ddd;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    /* Navigation styles */
+    nav {
+      background: #2a2a2a;
+      padding: 12px 20px;
+      position: relative;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      color: #ddd;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      box-shadow: 0px 0px 12px #00c6ff;
+      background: #1e1e1e;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: #f1f1f1;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        background: #2a2a2a;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 200px;
+        display: none;
+        padding: 10px;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .container {
+      padding: 40px 20px;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .container h2 {
+      font-size: 2.2em;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      padding: 20px 0;
+    }
+
+    .team-card {
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0px 0px 15px #00c6ff;
+    }
+
+    .team-card img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #00c6ff;
+    }
+
+    .team-card h3 {
+      color: #00c6ff;
+      margin-bottom: 8px;
+      font-size: 1.4em;
+    }
+
+    .team-card p {
+      font-size: 0.95em;
+      color: #ccc;
+    }
+
+    footer {
+      background: #111;
+      padding: 15px;
+      text-align: center;
+      color: #888;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Meet the Team
+  </header>
+
+  <nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="components.html">Components</a></li>
+      <li><a href="features.html">Overview & Features</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="demo.html">Demo</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>GraviTech</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="Christopher.jpg" alt="Christopher L. Amo">
+        <h3>Christopher L. Amo</h3>
+        <p>Project Lead / Hardware and Embedded Software Development</p>
+      </div>
+      <div class="team-card">
+        <img src="Vishnu N.jpg" alt="Vishnu N">
+        <h3>Vishnu N</h3>
+        <p>Web Interface Design & Deployment</p>
+      </div>
+      <div class="team-card">
+        <img src="Palak. R.jpg" alt="Palak R.">
+        <h3>Palak R.</h3>
+        <p>Web Interface Design & Deployment</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 GraviTech | Smart Gas Cylinder Level Monitoring System</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
